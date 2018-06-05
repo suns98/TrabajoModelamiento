@@ -1,0 +1,54 @@
+namespace EncapsulamientoClase
+{
+    class conexionSql
+    {
+        SqlConnection cn;
+        SqlCommand cmd;
+        SqlDataReader dr;
+
+
+        string Direccion = "Data Source= DESKTOP-KE5MIN5\\ALSUNS;Initial Catalog=pruebaConexion;Integrated Security=True";
+
+
+        public conexionSql()
+        {
+           ;
+            try
+            {
+                cn = new SqlConnection("Data Source=DESKTOP-KE5MIN5\ALSUNS;Initial Catalog=pruebaConexion;Integrated Security=True");
+                cn.Open();
+                MessageBox.Show("conectado");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al conectar"+ex.ToString());
+
+            }
+        }
+
+        public string insertarDatos(string Id, string nombre, string apellido, int edad)
+        {
+            string salida = "hola";
+
+            try
+            {
+
+                cmd = new SqlCommand("Insert into Empleado (IdEmpleado,Nombre,Apellido,Edad)values (" + Id + "," + nombre + "," + apellido + "," + edad + ")");
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show("no se conecto"+e.ToString());
+
+            }
+
+            return salida;
+
+
+        }
+
+
+    }
+}

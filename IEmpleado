@@ -1,0 +1,13 @@
+namespace EncapsulamientoClase
+{
+    interface Iempleado
+    {
+         int _horasTrabajadas { get; set; }
+         float _valorHora { get;  }
+
+
+           float PagoHoras();
+
+
+    }
+}

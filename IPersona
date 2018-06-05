@@ -1,0 +1,14 @@
+namespace EncapsulamientoClase
+{
+    interface Ipersona
+    {
+
+        string Hablar(string mensaje);
+
+
+        string Caminar();
+
+        string Comer();
+
+    }
+}

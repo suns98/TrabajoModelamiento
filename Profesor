@@ -1,0 +1,18 @@
+namespace EncapsulamientoClase
+{
+    class Profesor : Empleado
+
+    {
+
+        public string Materia { get; set; }
+
+        public virtual string DictarClase(string materia)
+        {
+           string clase = materia;
+
+            return "el profesor dicta la materia "+clase;
+
+        }
+
+    }
+}

@@ -1,0 +1,40 @@
+namespace EncapsulamientoClase
+{
+
+
+
+
+    public abstract class Persona
+    {
+        private string _nombre;
+        private string _apellido;
+        private int _edad = 0;
+
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+
+        public string Apellido
+        {
+            get { return _apellido; }
+            set { _apellido = value; }
+        }
+
+        public int Edad
+        {
+            get { return _edad; }
+
+            set
+            {
+                if (value > 0)
+                    _edad = value;
+                else
+                    throw new System.ArgumentException("no se permiten valores negativos", "value");
+            }
+        }
+
+
+    }
+}

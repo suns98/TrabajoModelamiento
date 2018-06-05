@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EncapsulamientoClase
+{
+
+
+
+
+
+    public class Empleado:Persona, Ipersona,Iempleado
+    {
+        #region Encapsulamiento
+
+       public string IdEmpleado { get; set; }
+
+        public int _horasTrabajada = 0;
+
+
+
+        public int _horasTrabajadas
+        {
+            get { return _horasTrabajadas; }
+            set
+            {
+
+                if (value >= 0)
+                    _horasTrabajadas = value;
+                else
+                    throw new System.ArgumentException("no se permiten valores negativos", "value");
+            }
+        }
+
+       public float _valorHora
+        {
+            get { return _valorHora; }
+
+        }
+
+
+        #endregion
+
+
+        public string Hablar(string mensaje)
+        {
+            return(mensaje);
+        }
+
+        public string Caminar()
+        {
+          return ("camina con baston");
+        }
+
+        public string Comer()
+        {
+            return ("con las manos");
+        }
+
+
+
+        public float PagoHoras()
+        {
+            return (_valorHora * _horasTrabajadas);
+        }
+
+
+    }
+}
